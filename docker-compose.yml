@@ -1,0 +1,23 @@
+version: "3"
+services:
+  postgres:
+    image: postgres:9.6
+    container_name: postgres
+    restart: on-failure
+    ports:
+      - 5432:5432
+    volumes:
+      - /usr/local/var/docker-deno/postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres_data
+      - POSTGRES_PASSWORD=password
+  # deno_server:
+  #   image: hayd/alpine-deno:1.0.0
+  #   container_name: deno_server
+  #   ports:
+  #     - 4000:4000
+  #   volumes:
+  #     - .:/deno-dir
+  #   command: run --allow-net --allow-read --allow-env /deno-dir/server.ts
+  #   depends_on:
+  #     - postgres
