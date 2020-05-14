@@ -1,1 +1,1 @@
-### Basic example of a server running with (deno)[https://deno.land/]
+### Basic example of a server running with [deno](https://deno.land/)
